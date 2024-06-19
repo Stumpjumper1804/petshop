@@ -1,17 +1,17 @@
 <!-- <div class="mx-auto"> -->
-<div class="card w-75">
+<div class="card w-50">
   <div class="card-header">
     {{ pet.species }}
   </div>
   <div>
-    <img [src]="pet.image" class="w-75 mx-auto" />
+    <img [src]="pet.image" class="w-100" />
   </div>
   <div class="card-body">
     <h5 class="card-title">
-      {{ pet.age }} years olf, feeds on {{ pet.feed }}.
+      {{ pet.age }} years old, feeds on {{ pet.feed }}.
     </h5>
     <p class="card-text">{{ pet.description }}</p>
-    <a href="#" class="btn btn-primary">Buy it</a>
+    <button (click)="addToCart()" class="btn btn-primary">Add to cart</button>
   </div>
 </div>
 <!-- </div> -->
