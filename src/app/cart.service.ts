@@ -12,4 +12,13 @@ export class CartService {
     this.cartItems.push(pet);
     console.log(this.cartItems);
   }
+
+  getItems() {
+    return this.cartItems;
+  }
+
+  clearCart() {
+    this.cartItems = [];
+    return this.cartItems;
+  }
 }

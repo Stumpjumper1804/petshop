@@ -1,1 +1,12 @@
-<p>cart works!</p>
+<h3>Cart</h3>
+
+<div
+  class="cart-item border border-dark border-1 p-2"
+  *ngFor="let pet of cartItems"
+>
+  <span class="me-4">{{ pet.species }} </span>
+
+  <span class="me-4">{{ pet.price | currency }}</span>
+
+  <button class="purchase btn btn-danger">Purchase</button>
+</div>

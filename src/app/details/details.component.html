@@ -11,7 +11,10 @@
       {{ pet.age }} years old, feeds on {{ pet.feed }}.
     </h5>
     <p class="card-text">{{ pet.description }}</p>
-    <button (click)="addToCart()" class="btn btn-primary">Add to cart</button>
+    <div class="d-flex justify-content-between p-2">
+      <button (click)="addToCart()" class="btn btn-primary">Add to cart</button>
+      <span class="price-tag fw-bold fs-4">{{ pet.price | currency }}</span>
+    </div>
   </div>
 </div>
 <!-- </div> -->
