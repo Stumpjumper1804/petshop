@@ -1,5 +1,5 @@
-<div class="card-outer-div mx-auto">
-  <div class="card w-50 mx-auto mt-5">
+<div class="card-outer-div w-75 my-4 mx-auto">
+  <div class="card w-50 mx-auto">
     <div class="card-header fw-bold fs-4">
       {{ pet.species }}
     </div>
@@ -12,9 +12,12 @@
       </h5>
       <p class="card-text">{{ pet.description }}</p>
       <div class="d-flex justify-content-between p-2">
-        <button (click)="addToCart()" class="btn btn-danger">
-          Add to cart
-        </button>
+        <div class="d-flex justify-content-start">
+          <button (click)="addToCart()" class="btn btn-danger me-4">
+            Add to cart
+          </button>
+          <a routerLink="/home" class="btn btn-primary me-4">Back to home</a>
+        </div>
         <span class="price-tag fw-bold fs-4">{{
           pet.price | currency : "EUR"
         }}</span>
