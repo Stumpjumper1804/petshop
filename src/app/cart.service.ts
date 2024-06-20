@@ -16,6 +16,31 @@ export class CartService {
     }
   }
 
+  decreaseQuantity(pet: IPet) {
+    if (pet.quantity > 1) {
+      pet.quantity--;
+    } else {
+      this.cartItems = this.cartItems.filter((cartItem) => pet != cartItem);
+      pet.quantity = 1;
+    }
+  }
+
+  increaseQuantity(pet: IPet) {
+    pet.quantity++;
+  }
+
+  deletePet(index: number) {
+    this.cartItems.splice(index, 1);
+  }
+
+  getTotal() {
+    let total: number = 0;
+    this.cartItems.forEach((pet) => {
+      total += pet.price * pet.quantity;
+    });
+    return total;
+  }
+
   getItems() {
     return this.cartItems;
   }

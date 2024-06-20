@@ -31,15 +31,19 @@
         <td>{{ pet.quantity }}</td>
         <td>{{ pet.price | currency : "EUR" }}</td>
         <td>
-          <button class="btn btn-light">-</button
-          ><button class="btn btn-light">Del</button
-          ><button class="btn btn-light">+</button>
+          <button class="btn btn-light" (click)="decreaseQuantity(pet)">
+            -</button
+          ><button class="btn btn-light" (click)="deletePet(idx)">Del</button
+          ><button class="btn btn-light" (click)="increaseQuantity(pet)">
+            +
+          </button>
         </td>
         <td>{{ pet.quantity * pet.price | currency : "EUR" }}</td>
       </tr>
       }
     </tbody>
   </table>
-
-  <p>Total: <span>(total sum)</span></p>
+  <p>
+    Total: <span> {{ total | currency : "EUR" }} </span>
+  </p>
 </div>
