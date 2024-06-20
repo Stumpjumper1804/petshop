@@ -1,12 +1,45 @@
-<h3>Cart</h3>
+<h3 class="m-2">Cart</h3>
 
-<div
-  class="cart-item border border-dark border-1 p-2"
+<!-- <div
+  class="cart-item border border-dark border-1 p-2 m-2"
   *ngFor="let pet of cartItems"
 >
   <span class="me-4">{{ pet.species }} </span>
 
-  <span class="me-4">{{ pet.price | currency }}</span>
+  <span class="me-4">{{ pet.price | currency : "EUR" }}</span>
 
   <button class="purchase btn btn-danger">Purchase</button>
+</div> -->
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Animal</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (pet of cartItems; track pet; let idx = $index) {
+      <tr>
+        <td><img [src]="pet.image" class="" style="height: 50px" alt="" /></td>
+        <td>{{ pet.species }}</td>
+        <td>{{ pet.quantity }}</td>
+        <td>{{ pet.price | currency : "EUR" }}</td>
+        <td>
+          <button class="btn btn-light">-</button
+          ><button class="btn btn-light">Del</button
+          ><button class="btn btn-light">+</button>
+        </td>
+        <td>{{ pet.quantity * pet.price | currency : "EUR" }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <p>Total: <span>(total sum)</span></p>
 </div>

@@ -9,8 +9,11 @@ export class CartService {
   constructor() {}
 
   addToCart(pet: IPet) {
-    this.cartItems.push(pet);
-    console.log(this.cartItems);
+    if (this.cartItems.includes(pet)) {
+      pet.quantity++;
+    } else {
+      this.cartItems.push(pet);
+    }
   }
 
   getItems() {
