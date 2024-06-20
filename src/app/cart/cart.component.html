@@ -21,10 +21,14 @@
         <td>{{ pet.price | currency : "EUR" }}</td>
         <td>
           <button class="btn btn-light" (click)="decreaseQuantity(pet)">
-            -</button
-          ><button class="btn btn-light" (click)="deletePet(idx)">Del</button
+            <i class="bi bi-dash-circle-fill"></i></button
+          ><button
+            class="btn btn-light border-dark border-1 mx-2"
+            (click)="deletePet(idx)"
+          >
+            <i class="bi bi-trash-fill fs-5"></i></button
           ><button class="btn btn-light" (click)="increaseQuantity(pet)">
-            +
+            <i class="bi bi-plus-circle-fill"></i>
           </button>
         </td>
         <td>{{ pet.quantity * pet.price | currency : "EUR" }}</td>
@@ -32,8 +36,10 @@
       }
     </tbody>
   </table>
-  <p class="fw-bold fs-4">
-    Total:
-    <span class="fw-bold fs-4 ms-2"> {{ total | currency : "EUR" }} </span>
-  </p>
+  <div class="d-flex justify-content-end">
+    <p class="fw-bold fs-4 me-4">
+      Total:
+      <span class="fw-bold fs-4 ms-2"> {{ total | currency : "EUR" }} </span>
+    </p>
+  </div>
 </div>
