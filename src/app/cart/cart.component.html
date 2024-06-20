@@ -1,15 +1,4 @@
-<h3 class="m-2">Cart</h3>
-
-<!-- <div
-  class="cart-item border border-dark border-1 p-2 m-2"
-  *ngFor="let pet of cartItems"
->
-  <span class="me-4">{{ pet.species }} </span>
-
-  <span class="me-4">{{ pet.price | currency : "EUR" }}</span>
-
-  <button class="purchase btn btn-danger">Purchase</button>
-</div> -->
+<h3 class="container mx-auto m-2 my- text-danger">Cart</h3>
 
 <div class="container">
   <table class="table table-striped">
@@ -43,7 +32,8 @@
       }
     </tbody>
   </table>
-  <p>
-    Total: <span> {{ total | currency : "EUR" }} </span>
+  <p class="fw-bold fs-4">
+    Total:
+    <span class="fw-bold fs-4 ms-2"> {{ total | currency : "EUR" }} </span>
   </p>
 </div>

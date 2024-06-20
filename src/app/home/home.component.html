@@ -1,5 +1,5 @@
 <section>
-  <div class="row row-cols-3">
+  <div class="row row-cols-3 container mx-auto">
     @for (pet of petsData; track pet; let id = $index) {
     <div class="p-2">
       <div class="card">
@@ -9,7 +9,12 @@
           <p class="card-text">
             {{ pet.description }}
           </p>
-          <a routerLink="/details/{{ id }}" class="btn btn-primary">Details</a>
+          <a routerLink="/details/{{ id }}" class="btn btn-primary me-4"
+            >Details</a
+          >
+          <button (click)="addToCart(this.pet)" class="btn btn-danger">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>

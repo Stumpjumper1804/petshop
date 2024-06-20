@@ -1,22 +1,24 @@
-<!-- <div class="mx-auto"> -->
-<div class="card w-50">
-  <div class="card-header">
-    {{ pet.species }}
-  </div>
-  <div>
-    <img [src]="pet.image" class="w-100" />
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">
-      {{ pet.age }} years old, feeds on {{ pet.feed }}.
-    </h5>
-    <p class="card-text">{{ pet.description }}</p>
-    <div class="d-flex justify-content-between p-2">
-      <button (click)="addToCart()" class="btn btn-primary">Add to cart</button>
-      <span class="price-tag fw-bold fs-4">{{
-        pet.price | currency : "EUR"
-      }}</span>
+<div class="card-outer-div mx-auto">
+  <div class="card w-50 mx-auto mt-5">
+    <div class="card-header fw-bold fs-4">
+      {{ pet.species }}
+    </div>
+    <div>
+      <img [src]="pet.image" class="w-100 img-fluid" />
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ pet.age }} years old, feeds on {{ pet.feed }}.
+      </h5>
+      <p class="card-text">{{ pet.description }}</p>
+      <div class="d-flex justify-content-between p-2">
+        <button (click)="addToCart()" class="btn btn-danger">
+          Add to cart
+        </button>
+        <span class="price-tag fw-bold fs-4">{{
+          pet.price | currency : "EUR"
+        }}</span>
+      </div>
     </div>
   </div>
 </div>
-<!-- </div> -->
